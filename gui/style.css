@@ -1,0 +1,154 @@
+@font-face {
+    font-family: valorant;
+    src: url('media/valorant.ttf');
+    src: local('VALORANT'), url('media/valorant.ttf');
+}
+@font-face {
+    font-family: proximanova;
+    src: url('media/proxnova.otf');
+    src: local('ProximaNova-Regular'), url('media/proxnova.otf');
+}
+
+div{
+    color: white;
+}
+
+.bg-img{
+    background-image: linear-gradient(to right,
+    #070707 35%,    
+    #070707f8 55%,    
+    #11070daf 75%,
+    #0c0c0c00
+    ),
+    url('media/bg_.jpg');
+    background-position: left center;
+    background-size: 110%;
+    background-attachment: fixed;
+}
+
+.title-font{
+    font-family: valorant;
+    text-shadow:
+        2px 2px #3898d8,
+        3px 3px #b82d67;
+}
+
+.fuentes, .list-group{
+    font-family: proximanova;
+}
+
+li.active{
+    background-color: #b82d67 !important;
+    border-color: transparent !important;
+}
+
+.row{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.title-padding{
+    padding-bottom: 0px !important;
+}
+
+hr{
+    margin: 0;
+}
+
+highlight{
+    color: #b82d67 !important;
+    padding-left: 10%;
+    
+}
+
+.light-text{
+    opacity: 70%;
+    font-size: 60%;
+}
+
+#form{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 350% !important;
+    -webkit-mask-image: linear-gradient(
+        rgba(0, 0, 0, 0.226) 0%,
+        rgba(0, 0, 0, 0.226) 6%,
+        white 16%,
+        white 82%,
+        rgba(0, 0, 0, 0.226) 92%
+        );
+    mask-image: linear-gradient(
+        rgba(0, 0, 0, 0.226) 0%,
+        rgba(0, 0, 0, 0.226) 6%,
+        white 16%,
+        white 82%,
+        rgba(0, 0, 0, 0.226) 92%
+        );
+    direction: rtl;
+    padding: 0px;
+}
+#form_content{
+    direction: ltr;
+}
+
+.tooltip-inner {
+    background-color: white !important;
+    color: black !important;
+}
+.tooltip-arrow::before{
+    border-right-color: white !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(24, 24, 24);
+    border-radius: 15px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(68, 68, 68);
+    border-radius: 15px;
+}
+
+#Publisher, #Platform, #Genre{
+    width: 50%;
+}
+
+label{
+    padding-bottom: 3%;
+}
+
+.btn-primary{
+    border-radius: 30px !important;
+    background-color: #b82d67 !important;
+    border-color: transparent !important;
+    color: white !important;
+    width: 100% !important;
+    height: 100%;
+}
+.btn-primary:hover{
+    border-color: white !important;
+    background-color: #e64085 !important;
+    border-width: 5px;
+    transition: ease-in-out !important;
+}
+
+#info_msg{
+
+    color: black !important;
+
+}
+
+img{
+    width: 50% !important;
+}
+
+.loading_button{
+    background-image: url('media/loading.gif');
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

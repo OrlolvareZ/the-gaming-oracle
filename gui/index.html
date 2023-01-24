@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>Python demo for DataRobot API usage</title>
+    <script src="https://kit.fontawesome.com/05b7c691b4.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-img">
+    <div class="container" id="main" style="height: 10vw !important;">
+        <div class="row title-font title-padding">
+            <div class="col col-1"></div>
+            <div class="col col-10">
+                <hr>
+                <h1 >
+                    Videogames' critic score predicter
+                </h1>
+                <hr>
+            </div>
+            <div class="col col-1"></div>
+        </div>
+        <div class="row" id="form">
+            <div class="row" id="form_content">
+                <div class="col col-6">
+    
+                    <div class="container" >
+                        <div class="row fuentes">
+                            Do you want to find how your game will perform with the critics?<br><br>
+                            <h4 class="highlight" style="color: #b82d67 !important;">
+                                <b> Fill the form below to get a prediction using the power of AI. </b>
+                            </h4>
+                        </div>
+                        <div class="row fuentes"> <!-- Publisher -->
+                            <label>
+                                <h4>
+                                    <b>Publisher</b> 
+                                </h4>
+                            </label>
+                            <select name="Publisher" id="Publisher" class="form-select"></select>
+                        </div>
+                        <div class="row fuentes"> <!-- Platform -->
+                            <label>
+                                <h4>
+                                    <b>Platform</b> 
+                                </h4>
+                            </label>
+                            <select name="Platform" id="Platform" class="form-select"></select>
+                        </div>
+                        <div class="row fuentes"> <!-- Genre -->
+                            <label>
+                                <h4>
+                                    <b>Genre</b> 
+                                </h4>
+                            </label>
+                            <select name="Genre" id="Genre" class="form-select"></select>
+                        </div>
+                        <div class="row fuentes"> <!-- Sales title -->
+                            <h4>
+                                <b>Sales </b>
+                                <span class="light-text">
+                                    (in millions)
+                                </span>
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Dont know the sales? Click here to find an estimate based on other games! 🎮"
+                                onclick="{ window.open('https://www.vgchartz.com/gamedb/', '_blank'); }">
+                                <i class="fa-solid fa-circle-info"></i>
+                                </button>
+                            </h4>
+                            
+                        </div>
+                        <div class="row fuentes"> <!-- Sales -->
+                            <div class="col col-6">
+                                <label>
+                                    <h5>
+                                        <b>North America Sales</b> 
+                                    </h5>
+                                </label>
+                                <input type="number" id="NA_Sales" name="NA_Sales" min="0" step="0.5" class="form-control" placeholder=" e.g. '0.05'">
+                            </div>
+                            <div class="col col-6">
+                                <label>
+                                    <h5>
+                                        <b>Europe Sales</b> 
+                                    </h5>
+                                </label>
+                                <input type="number" id="EU_Sales" name="EU_Sales" min="0" step="0.5" class="form-control" placeholder=" e.g. '0.05'">
+                            </div>
+                        </div>
+                        <div class="row fuentes"> <!-- Sales -->
+                            <div class="col col-6">
+                                <label>
+                                    <h5>
+                                        <b>Japan Sales</b> 
+                                    </h5>
+                                </label>
+                                <input type="number" id="JP_Sales" name="JP_Sales" min="0" step="0.5" class="form-control" placeholder=" e.g. '0.05'">
+                            </div>
+                            <div class="col col-6">
+                                <label>
+                                    <h5>
+                                        <b>Other Countries</b> 
+                                    </h5>
+                                </label>
+                                <input type="number" id="Other_Sales" name="Other_Sales" min="0" step="0.5" class="form-control" placeholder=" e.g. '0.05'">
+                            </div>
+                        </div>
+                        <div class="row fuentes"> <!-- Rating -->
+                            <div class="col col-6">
+                                <label>
+                                    <h4>
+                                        <b>Rating</b> 
+                                    </h4>
+                                </label>
+                                <select name="Rating" id="Rating" class="form-select"></select>
+                            </div>
+                            <div class="col col-6">
+                                <button type="button" id="submit_button" class="btn btn-primary">
+                                    <h4>
+                                        <b> Submit </b>
+                                    </h4>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-6"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal to show information -->
+    
+    <div class="modal fade modal-dialog modal-dialog-centered" id="info_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col col-1"></div>
+                    <div class="col col-10">
+                        <div class="row" id="info_img">
+                            
+                        </div>
+                        <div class="row" id="info_msg">
+                            <!-- Say something here -->
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok!</button>
+                        </div>
+                    </div>
+                    <div class="col col-1"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+<script type="text/javascript" src="/eel.js"></script>
+<script type="text/javascript" src="jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+</html>
