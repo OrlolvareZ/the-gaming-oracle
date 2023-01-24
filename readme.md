@@ -1,4 +1,4 @@
-# Videogame critics' score predicter
+# The Gaming Oracle
 
 ![kirby-gif](gui/media/loading.gif "I'm predicting! 🧠💡")
 
